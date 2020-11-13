@@ -1,0 +1,25 @@
+.header {
+    height: 65px;
+    width: 100%;
+
+
+    &-nav {
+        height: inherit;
+        width: inherit;
+        padding: 5px 35px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: var(--base-color);
+    }
+
+    &-nav__logo {
+        h1 {
+            color: var(--text-color);
+        }
+    }
+
+}
+

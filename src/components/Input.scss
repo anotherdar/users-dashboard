@@ -1,0 +1,39 @@
+@mixin padding($size) {
+    padding: $size;
+}
+
+.input {
+    border: none;
+    @include padding(10px);
+
+    border-radius: 5px;
+    border:2px solid var(--base-color);
+
+    color: var(--text-color-gray);
+
+    &--label {
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+
+            color: var(--text-color-gray);
+
+            @include padding(5px 0);
+        }
+    }
+
+    &--error {
+        color: var(--text-color-error);
+        font-weight: bold;
+        font-size: 10px;
+
+        text-transform: uppercase;
+
+        padding: 5px 0px;
+    }
+}
