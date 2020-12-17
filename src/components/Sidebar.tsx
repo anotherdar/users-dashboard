@@ -10,7 +10,7 @@ export const Sidebar: React.FC = () => {
             {
                 SidebarPaths.map(i => {
                     return (
-                        <NavigationLink key={i.name} path={i.path} >{i.name}</NavigationLink>
+                        <NavigationLink key={i.name} path={i.path} icon={i.icon}>{i.name}</NavigationLink>
                     )
                 })
             }

@@ -17,6 +17,9 @@
 
     width: 100%;
 
+    display: flex;
+    align-items: center;
+
     &__active {
         @include properties();
     }
@@ -29,4 +32,3 @@
         font-size: var(--xs-size);
     }
 }
-

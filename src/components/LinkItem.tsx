@@ -5,22 +5,30 @@ import { NavLink, useHistory } from 'react-router-dom'
 import './LinkItem.scss'
 
 interface NavigationLinkProps {
-    path: string
+    path: string,
+    icon?: string
 }
 
-export const NavigationLink:React.FC<NavigationLinkProps> = (props) => {
-    const {path, children} = props
+export const NavigationLink: React.FC<NavigationLinkProps> = (props) => {
+    const { path, children, icon } = props
 
-    const {location} = useHistory()
+    const { location } = useHistory()
 
     return (
-        <NavLink 
-            to={path} 
+        <NavLink
+            to={path}
             activeClassName="link__active"
-            isActive={() => path === location.pathname} 
-            className="link" 
+            isActive={() => path === location.pathname}
+            className="link"
         >
-            <h1>{children}</h1>
+            {icon &&
+                <i className="material-icons">{icon}</i>
+            }
+            <h1
+                style={{
+                    marginLeft: icon ? "var(--sm-size)" : ""
+                }}
+            >{children}</h1>
         </NavLink>
     )
 }

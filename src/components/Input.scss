@@ -5,7 +5,7 @@
 .input {
     border: none;
     @include padding(10px);
-
+    width: 100%;
     border-radius: 5px;
     border:2px solid var(--base-color);
 

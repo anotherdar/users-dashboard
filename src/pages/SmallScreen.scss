@@ -1,0 +1,27 @@
+.small-screen {
+    height: 100vh;
+    background-color: var(--base-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--img {
+        width: 50%;
+        margin-bottom: var(--xl-size);
+    }
+
+    &--h {
+        color: var(--text-color);
+        text-transform: uppercase;
+        font-size: var(--xl-size);
+        margin-bottom: var(--xl-size);
+
+    }
+
+    &--p {
+        color: var(--text-color);
+        font-size: var(--sm-color);
+    }
+}

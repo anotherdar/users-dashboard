@@ -1,6 +1,6 @@
 @mixin center {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .create-user {
@@ -9,7 +9,7 @@
     width: 100%;
     height: 100%;
     &__form{
-        width: 100%;
+        width: 50%;
         padding: 0px 5px;
         padding-bottom: 5px;
        
