@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import {DropDownAvatar} from '../components/'
+
 import './Header.scss'
 
 export const Header: React.FC = () => {
@@ -11,7 +13,7 @@ export const Header: React.FC = () => {
                 </div>
 
                 <div className="header-nav__actions">
-                    user account
+                   <DropDownAvatar />
                 </div>
             </nav>
         </header>

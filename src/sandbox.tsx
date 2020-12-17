@@ -1,35 +1,18 @@
 import React from 'react';
-import './App.css';
-import { Input } from './components/Input';
+import { useForm } from 'react-hook-form';
 
-import {useForm} from 'react-hook-form'
-
-type FormValues = {
-  [key: string]: string
-}
-
-function App() {
-  const {register, handleSubmit, errors} = useForm<FormValues>({
-    mode: 'onBlur'
-  });
-
-  const onSubmit = handleSubmit((data) => {
-    console.log(data)
-  })
-
+export default function SandBox() {
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = (data: any) => console.log(data);
+  console.log(errors);
+  
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <Input 
-          name="name"
-          ref={register({required: 'Name is required'})}
-          label="Name"
-          error={errors.name ? errors?.name?.message : ''}
-        />
-        <button type="submit">send</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+
+      <input name="Developer" type="radio" value="Yes" ref={register({ required: true })}/>
+      <input name="Developer" type="radio" value="No" ref={register({ required: true })}/>
+
+      <input type="submit" />
+    </form>
   );
 }
-
-export default App;

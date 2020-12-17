@@ -4,8 +4,8 @@ import {Switch, Route} from 'react-router-dom'
 //components
 import {Container, Header, Sidebar, Content} from '../components'
 
-//views
-import {UserCreator, Users} from '../features/users'
+import { HomeRoutes } from  "../routes/HomeRoutes"
+
 
 export const Home: React.FC = () => {
     return (
@@ -15,9 +15,13 @@ export const Home: React.FC = () => {
                 <Sidebar />
                 <Content>
                     <Switch>
-                        <Route path="/user_creator" component={UserCreator}/>
-                        <Route path="/users" component={Users}/>
-                        <Route path="/" render={() => <h1>Wellcome back</h1>}/>
+                        {
+                            HomeRoutes.map(i => {
+                                return (
+                                    <Route key={i.path} path={i.path} component={i.component}/>
+                                )
+                            })
+                        }
                     </Switch>
                 </Content>
             </Container>

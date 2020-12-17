@@ -8,5 +8,10 @@ export interface ProtectedRouteProperties extends RouteProps {
 
 export const ProtectedRoute: FC<ProtectedRouteProperties> = (props) => {
     const {isAuthenticated, redirectTo, component, render} = props;
-    return isAuthenticated ? (<Route {...props} component={component} render={render}/>) : (<Redirect to={{pathname: redirectTo}}/>)
+    return ( 
+        isAuthenticated ? 
+            (<Route {...props} component={component} render={render}/>) 
+            :
+            (<Redirect to={{pathname: redirectTo}}/>)
+    )
 }

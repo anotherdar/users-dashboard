@@ -23,20 +23,50 @@ code {
   user-select: none;
 }
 
-@function complement() {
-  $lighten: lighten(#38a169, 5%);
+@mixin scrollbar($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
 
-  @return $lighten;
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
 }
 
+@mixin ScrollOrientation($X, $Y) {
+  overflow-x: $X;
+  overflow-y: $Y;
+}
 :root {
   --base-color: #38a169;
   --complement-color: #48bb78;
   --app-white: #fff;
+  --darker-color: #333;
+  --app-error-color: #e53e3e;
 
   --text-color: #ffffff;
   --text-color-gray: #575757;
   --text-color-error: #e53e3e;
+
+  --xs-size: 12px;
+  --sm-size: 16px;
+  --md-size: 18px;
+  --xl-size: 24px;
+  --xl-1-size: 32px;
+  --xl-2-size: 48px;
 }
 
 
@@ -44,3 +74,43 @@ code {
   height: 100vh;
 }
 
+.animation-shake {
+  animation: shakeX .5s cubic-bezier(0.4, 0, 0.6, 1) both;
+}
+
+@keyframes shakeX {
+  10%, 90% {
+    transform: translateX(-1px);
+  }
+  
+  20%, 80% {
+    transform: translateX(2px);
+  }
+
+  30%, 50%, 70% {
+    transform: translateX(-4px);
+  }
+
+  40%, 60% {
+    transform: translateX(4px);
+  }
+}
+
+.material-icons {
+  font-size: var(--xl-size);
+}
+
+.main {
+  display: flex;
+  width: 100%;
+
+  .col-2 {
+    width: calc(100% / 2);
+    padding: 0px 5px;
+  }
+}
+
+.scroll {
+  @include scrollbar(3px, var(--base-color), var(--text-color-gray));
+  @include ScrollOrientation(hidden, auto)
+}

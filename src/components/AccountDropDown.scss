@@ -1,0 +1,83 @@
+@mixin removeDefault {
+    border: 0;
+    padding: 0;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account{
+    position: relative;
+    
+    &-avatar {
+        @include removeDefault();
+        @include center();
+        border-radius: 100px;
+
+        i {
+            font-size: var(--xl-1-size);
+            color: var(--base-color);
+        }
+
+        cursor: pointer;
+        outline: none;
+    }
+
+    &-dropdown {
+        cursor: default;
+        
+        width: 100%;
+        height: 100%;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        background-color: var(--darker-color);
+        opacity: 0;
+    }
+
+    &-menu {
+        background-color: var(--app-white);
+
+        padding: 5px 0;
+
+        position: absolute;
+        right: 0;
+
+        width: 200px;
+        margin-top: 5px;
+
+        border-radius: 5px;
+        box-shadow: 0px 6px 12px rgba(0,0,0, .1);        
+
+        @include center();
+
+       
+    }
+
+    &-menu__item {
+        @include removeDefault();
+        width: 100%;
+
+        padding: var(--sm-size);
+        text-transform: uppercase;
+        font-size: var(--xs-size);
+        font-weight: bold;
+        color: var(--text-color-gray);
+        background-color: var(--app-white);
+        
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--base-color);
+            color: var(--app-white);
+        }
+
+    }
+
+}

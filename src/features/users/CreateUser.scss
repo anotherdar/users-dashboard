@@ -1,0 +1,36 @@
+@mixin center {
+    display: flex;
+    align-items: flex-start;
+}
+
+.create-user {
+    @include center();
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    &__form{
+        width: 100%;
+        padding: 0px 5px;
+        padding-bottom: 5px;
+       
+        &--title {
+            text-align: left;
+            width: 33.5%;
+            h1 {
+                color: var(--text-color-gray);
+                font-size: var(--xl-1-size);
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.radio-group {
+    &__actions {
+        display: flex;
+    }
+}
+
+.separator {
+    margin-right: 10px;
+}

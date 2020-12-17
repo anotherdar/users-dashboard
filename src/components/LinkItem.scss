@@ -1,19 +1,19 @@
 @mixin properties {
-    background-color: #fff;
+    background-color: var(--app-white);
     color: var(--base-color);
 }
 
 .link {
     text-transform: uppercase;
 
-    padding: 20px 10px;
+    padding: 15px 20px;
 
-    color: #fff;
+    color: var(--app-white);
     background-color: transparent;
 
     transition: background-color 0.3s ease-in-out;
 
-    text-align: center;
+    text-align: left;
 
     width: 100%;
 
@@ -26,7 +26,7 @@
     }
 
     h1 {
-        font-size: 12px;
+        font-size: var(--xs-size);
     }
 }
 

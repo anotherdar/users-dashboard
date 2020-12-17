@@ -1,7 +1,7 @@
-@mixin center {
+@mixin center($align) {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: $align;
 }
 
 @mixin direction($property) {
@@ -17,6 +17,8 @@
     &--content {
         background-color: inherit;
         width: 65%;
+
+        @include center(center)        
     }
 
     &--login {
@@ -26,7 +28,7 @@
         background-color: var(--app-white);
         border-top-left-radius: 20px;
 
-        @include center();
+        @include center(flex-start);
         @include direction(column);
 
         &__title {

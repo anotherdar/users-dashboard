@@ -1,0 +1,29 @@
+.btn {
+    // remove default
+    border: none;
+
+    // spacing
+    padding: 10px;
+    width: 100%;
+    
+    // text
+    color: var(--text-color-gray);
+    text-transform: uppercase;
+    font-weight: 600;
+
+    margin-top: 10px;
+}
+
+.btn--green {
+    background-color: var(--base-color);
+    color: var(--text-color);
+}
+
+.btn--rounded {
+    border-radius: 5px;
+}
+
+.btn--state-danger {
+    background-color: var(--app-error-color);
+    color: var(--text-color);
+}

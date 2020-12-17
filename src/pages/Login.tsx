@@ -1,42 +1,43 @@
 import * as React from 'react'
-
 import {useForm} from 'react-hook-form'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
-import * as yup from 'yup'
-import {yupResolver} from '@hookform/resolvers/yup'
+// components
+import {Button, Input} from '../components/'
 
-import {Input} from '../components/'
+//redux logic
+import { loginInputs, login } from '../features/login/loginSlice'
 
-import './login.scss'
+//input validations
+import {loginSchema} from '../schemas'
 
-const schema = yup.object().shape({
-    email: yup
-        .string()
-        .email('use a valid email')
-        .required('This field must not be empty'),
-    password: yup
-        .string()
-        .required('this field must not be empty')
-})
+import {ReactComponent as UserAssets} from '../assets/user.svg'
+
+import './pages.scss'
+
 
 export const Login: React.FC = () => {
+    const dispatch = useDispatch()
+
+    const {push} = useHistory()
+
     const {register, handleSubmit, errors} = useForm({
         mode: 'onBlur',
-        resolver: yupResolver(schema),
-        defaultValues: {
-            email: '',
-            password: ''
-        }
+        resolver: loginSchema
     })
 
-    const onSubmit = handleSubmit((data) => {
-        console.log(data)
+    //handle submit data
+    const onSubmit = handleSubmit((data: loginInputs) => {
+        dispatch(login(data))
+        //push to home
+        push('/')
     })
 
     return (
         <div className="page">
             <div className="page--content">
-
+                <UserAssets />
             </div>
             <div className="page--login">
                 <h1 className="page--login__title">welcome back</h1>
@@ -57,7 +58,11 @@ export const Login: React.FC = () => {
                         error={errors.password ? errors.password.message : ''}
                     />
 
-                    <button type="submit">enter</button>
+                    <Button 
+                        type="submit" 
+                        extraClass="btn--green btn--rounded"
+                        errors={errors.email || errors.password}
+                    >enter</Button>
                 </form>
             </div>
         </div>

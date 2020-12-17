@@ -13,8 +13,6 @@ export const NavigationLink:React.FC<NavigationLinkProps> = (props) => {
 
     const {location} = useHistory()
 
-    console.log(path, path === location.pathname)
-
     return (
         <NavLink 
             to={path} 
