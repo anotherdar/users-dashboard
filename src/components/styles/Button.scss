@@ -17,6 +17,10 @@
 .btn--green {
     background-color: var(--base-color);
     color: var(--text-color);
+
+    &:disabled {
+        background-color: lighten(#38a169, 35%);
+    }
 }
 
 .btn--rounded {

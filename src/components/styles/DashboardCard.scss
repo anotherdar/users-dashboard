@@ -1,0 +1,51 @@
+.Dash-item {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 5px;
+    margin: var(--sm-size);
+
+    background-color: var(--base-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    box-shadow: 0 3px 12px #38a16993;
+    i {
+        color: var(--base-color);
+        font-size: var(--xl-2-size);
+
+        padding: var(--xl-size);
+
+        background-color: var(--app-white);
+
+        border-radius: 100px;
+
+    }
+
+    p {
+        margin-top: var(--md-size);
+        font-size: var(--sm-size);
+        text-transform: uppercase;
+        font-weight: 400;
+
+        color: var(--app-white);
+
+    }
+
+}
+
+.sm {
+    width: 200px;
+}
+
+.md {
+    width: 500px;
+}
+
+.xl {
+    width: 100%;
+}

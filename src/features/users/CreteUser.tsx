@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { Button, Input, Select, Title, Banner } from '../../components';
-import { nanoid } from "@reduxjs/toolkit"
 
 import { userSchema } from '../../schemas'
 
-import './CreateUser.scss'
+import './styles/CreateUser.scss'
+import { useDispatch } from 'react-redux';
+import { addUser } from './userSlice';
+import { useHistory } from 'react-router-dom';
 
 export const UserCreator: React.FC = () => {
     const { errors, register, handleSubmit, control } = useForm({
@@ -27,10 +29,13 @@ export const UserCreator: React.FC = () => {
         name: "address"
     })
 
-    console.log(errors)
-    console.log(fields)
+    const dispatch = useDispatch();
+    const history = useHistory()
+
     const sendUserData = handleSubmit((data: User) => {
-        console.log(data)
+        dispatch(addUser(data))
+
+        history.push("/users")
     })
 
     return (
@@ -94,8 +99,8 @@ export const UserCreator: React.FC = () => {
                     {
                         fields.map((i, idx) => {
                             return (
-                                <>
-                                    <div className="form-group" key={nanoid(2)}>
+                                <div key={i.id}>
+                                    <div className="form-group">
                                         <div className="form-group--fields">
                                             <Input type='text' name={`address[${idx}].country`} ref={register} error={errors.address?.[idx]?.country?.message} label="Country" defaultValue={i.country} />
                                             <Input type='text' name={`address[${idx}].city`} ref={register} label='City' error={errors.address?.[idx]?.city?.message} defaultValue={i.city} />
@@ -116,7 +121,7 @@ export const UserCreator: React.FC = () => {
                                         </div>
                                     </div>
                                     <hr />
-                                </>
+                                </div>
                             )
                         })
                     }
@@ -126,7 +131,7 @@ export const UserCreator: React.FC = () => {
                     fields.length <= 0 && <Banner type="error" message="Address is missing!, click on add button to add a new address" />
                 }
 
-                <Button type='submit' extraClass="btn--green btn--full">Add user</Button>
+                <Button type='submit' extraclass="btn--green btn--full" disabled={Object.keys(errors).length !== 0}>Add user</Button>
             </form>
         </div>
     )

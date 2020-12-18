@@ -1,19 +1,19 @@
 import React, { FC, useEffect, useState } from 'react'
-import {useHistory} from 'react-router-dom'
-import {useDispatch} from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
-import {logOut} from '../features/login/loginSlice'
+import { logOut } from '../features/login/loginSlice'
 
-import './AccountDropDown.scss'
+import './styles/AccountDropDown.scss'
 
 export const DropDownAvatar: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {push} = useHistory()
+    const { push } = useHistory()
     const dispatch = useDispatch()
     const toOpenAndClose = () => setIsOpen(prevState => !prevState);
 
     const handleEscape = (e: KeyboardEvent) => {
-        if(e.key === "Esc" || e.key === 'Escape') setIsOpen(false)
+        if (e.key === "Esc" || e.key === 'Escape') setIsOpen(false)
     }
 
     useEffect(() => {
@@ -39,7 +39,7 @@ export const DropDownAvatar: FC = () => {
             {
                 isOpen && (
                     <div className="account-menu">
-                        <button 
+                        <button
                             onClick={handleLogout}
                             className="account-menu__item "
                         >

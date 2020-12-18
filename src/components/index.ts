@@ -9,3 +9,5 @@ export * from './Button'
 export * from './AccountDropDown'
 export * from "./Title"
 export * from "./BannerMessage"
+export * from "./DashboardCard"
+export * from "./Table"

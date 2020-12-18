@@ -8,8 +8,9 @@ type Gender = 'male' | 'female' | 'other'
 type CivilStatus = 'married' | 'single'
 
 type User = {
+    id?: string,
     firstName: string,
-    lasName: string,
+    lastName: string,
     identificationNumber: number,
     age: number,
     gender: Gender,

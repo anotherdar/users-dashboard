@@ -1,0 +1,43 @@
+@mixin even(){
+  &:nth-child(even) {
+    @content
+  }
+}
+
+.Table {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+
+    p {
+        text-transform: uppercase;
+    }
+}
+.header {
+    background: var(--base-color);
+    p {
+        color: var(--app-white);
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}
+
+.item {
+    p {
+        color: var(--base-color);
+        font-size: var(--sm-size);
+        font-weight: 500;
+    }
+
+    padding: 10px 10px;
+
+    @include even() {
+        background-color: lighten(#38a169, 45%);
+
+        p {
+            color: var(--text-color-gray)
+        }
+    }
+}

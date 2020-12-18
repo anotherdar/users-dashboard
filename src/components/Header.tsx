@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import {DropDownAvatar} from '../components/'
+import { DropDownAvatar } from '../components/'
 
-import './Header.scss'
+import './styles/Header.scss'
 
 export const Header: React.FC = () => {
     return (
@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
                 </div>
 
                 <div className="header-nav__actions">
-                   <DropDownAvatar />
+                    <DropDownAvatar />
                 </div>
             </nav>
         </header>

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './Sidebar.scss'
+import './styles/Sidebar.scss'
 
 import { SidebarPaths } from "../routes"
 import { NavigationLink } from './LinkItem'

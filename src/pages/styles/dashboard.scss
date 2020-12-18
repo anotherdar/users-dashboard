@@ -1,0 +1,22 @@
+.dashboard {
+    height: 90%;
+    &-content {
+        height: 100%;
+
+        &--panel {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            border-radius: 5px;
+            background-color:var(--app-white);
+            margin-top: var(--xs-size);
+        }
+    }
+}
+
+.shadow {
+    box-shadow: 0px 6px 16px  rgba(0,0,0, 0.2 );
+}

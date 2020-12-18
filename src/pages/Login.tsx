@@ -14,7 +14,7 @@ import { loginSchema } from '../schemas'
 
 import { ReactComponent as UserAssets } from '../assets/user.svg'
 
-import './pages.scss'
+import './styles/pages.scss'
 
 
 export const Login: React.FC = () => {
@@ -60,7 +60,7 @@ export const Login: React.FC = () => {
 
                     <Button
                         type="submit"
-                        extraClass="btn--green btn--rounded btn--full"
+                        extraclass="btn--green btn--rounded btn--full"
                         errors={errors.email || errors.password}
                     >enter</Button>
                 </form>

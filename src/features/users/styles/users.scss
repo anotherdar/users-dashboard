@@ -1,0 +1,29 @@
+@mixin center {
+    display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+
+
+.users {
+    &-header {
+        @include center();
+    }
+
+    .search {
+        @include center();
+
+        i {
+            color: var(--base-color);
+            font-size: var(--xl-1-size);
+        }
+    }
+
+    &-content {
+        img {
+            margin: 50px auto;
+            height: 450px;
+        }
+        @include center();
+    }
+}

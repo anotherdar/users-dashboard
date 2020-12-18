@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { NavLink, useHistory } from 'react-router-dom'
 
-import './LinkItem.scss'
+import './styles/LinkItem.scss'
 
 interface NavigationLinkProps {
     path: string,

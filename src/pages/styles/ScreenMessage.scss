@@ -1,4 +1,4 @@
-.small-screen {
+.screen {
     height: 100vh;
     background-color: var(--base-color);
 
@@ -8,7 +8,7 @@
     justify-content: center;
 
     &--img {
-        width: 50%;
+        width: 45%;
         margin-bottom: var(--xl-size);
     }
 

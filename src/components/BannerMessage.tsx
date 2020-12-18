@@ -1,5 +1,5 @@
 import * as React from "react"
-import "./Banner.scss"
+import "./styles/Banner.scss"
 
 type BannerMode = "warning" | "success" | "error"
 
