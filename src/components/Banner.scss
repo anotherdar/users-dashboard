@@ -1,0 +1,61 @@
+.Banner {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    background-color: var(--app-white);
+    border-radius: 5px;
+
+    padding: var(--sm-size);
+
+
+    p {
+        font-size: var(--sm-size);
+        font-weight: 600;
+        color: var(--text-color-gray);
+    }
+
+    i {
+        padding: var(--xs-size);
+        border-radius: 100px;
+        font-size: var(--xl-1-size);
+        margin-bottom: var(--xs-size);
+    }
+
+    &--warning {
+        i {
+            color: #ffaa00;
+            background-color: lighten(#ffaa00, 30%);
+        }
+
+        background-color: lighten(#ffaa00, 40%);
+
+        border: 1px solid #ffaa00;
+    }
+    &--error {
+        i {
+            color: var(--app-error-color);
+            background-color: lighten(#e53e3e, 30%);
+        }
+
+        background-color: lighten(#e53e3e, 40%);
+
+        border: 1px solid var(--app-error-color);
+    }
+    &--success {
+        i {
+            color: var(--base-color);
+            background-color: lighten(#38a169, 30%);
+        }
+
+        background-color: lighten(#38a169, 40%);
+
+        border: 1px solid var(--base-color);
+    }
+
+
+}

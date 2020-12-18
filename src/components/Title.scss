@@ -1,0 +1,22 @@
+.title {
+    
+    i {
+        margin-right: var(--xs-size);
+        color: var(--base-color);
+        font-size: var(--xl-size);
+    }
+
+    h1 {
+        font-size: var(--xl-size);
+        font-weight: 500;
+        color: var(--text-color-gray);
+        text-transform: capitalize;
+    }
+
+    &--center {
+        display: flex;
+        align-items: center;
+
+        margin-bottom: var(--xs-size);
+    }
+}

@@ -114,3 +114,11 @@ code {
   @include scrollbar(3px, var(--base-color), var(--text-color-gray));
   @include ScrollOrientation(hidden, auto)
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+}

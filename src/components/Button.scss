@@ -4,7 +4,7 @@
 
     // spacing
     padding: 10px;
-    width: 100%;
+    // width: 100%;
     
     // text
     color: var(--text-color-gray);
@@ -26,4 +26,15 @@
 .btn--state-danger {
     background-color: var(--app-error-color);
     color: var(--text-color);
+}
+
+.btn--full-rounded {
+    border-radius: 100px;
+}
+.btn--sm {
+    padding: 5px 6px;
+}
+
+.btn--full {
+    width: 100%;
 }

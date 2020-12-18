@@ -2,11 +2,11 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 
-// const addressSchema =  yup.object().shape({
-//     country: yup.string().required('Required'),
-//     city: yup.string().required('Required'),
-//     street_address: yup.string().required('Required')
-// })
+const addressSchema = yup.object().shape({
+    country: yup.string().required('Required'),
+    city: yup.string().required('Required'),
+    streetAddress: yup.string().required('Required')
+})
 const schema = yup.object().shape({
     firstName: yup.string().required('Required'),
     lastName: yup.string().required('Required'),
@@ -17,7 +17,8 @@ const schema = yup.object().shape({
     email: yup.string().email('Please provide a valid email').required('Required'),
     haveChild: yup.string().oneOf(["yes", "no"], "Required").required('Required'),
     birthDate: yup.string().required('Required'),
-    civilStatus: yup.string().oneOf(["married", "single"], "Required").required('Required')  
+    civilStatus: yup.string().oneOf(["married", "single"], "Required").required('Required'),
+    address: yup.array().of(addressSchema)
 })
 
 export const userSchema = yupResolver(schema)

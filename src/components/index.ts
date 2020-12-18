@@ -7,3 +7,5 @@ export * from './PrivateRoute'
 export * from './Sidebar'
 export * from './Button'
 export * from './AccountDropDown'
+export * from "./Title"
+export * from "./BannerMessage"
