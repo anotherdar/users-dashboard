@@ -11,7 +11,7 @@ type LoginState = {
 }
 
 const initialState: LoginState = {
-    isAuth: false;
+    isAuth: false
 }
 
 const logOut = createAction('LOGOUT')
