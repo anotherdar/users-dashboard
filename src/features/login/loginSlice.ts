@@ -1,4 +1,4 @@
-import {createAction, createSlice, PayloadAction} from '@reduxjs/toolkit'
+import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
 
 
@@ -11,7 +11,7 @@ type LoginState = {
 }
 
 const initialState: LoginState = {
-    isAuth: true
+    isAuth: false;
 }
 
 const logOut = createAction('LOGOUT')
@@ -20,20 +20,20 @@ const loginSlice = createSlice({
     name: 'login',
     initialState,
     reducers: {
-        login (state, action: PayloadAction<loginInputs>) {
+        login(state, action: PayloadAction<loginInputs>) {
             state.isAuth = true
         }
     },
     extraReducers: {
-        [logOut.toString()] (state) {
+        [logOut.toString()](state) {
             state.isAuth = false
         }
     }
 })
 
-const {login} = loginSlice.actions
+const { login } = loginSlice.actions
 
-export {logOut, login}
+export { logOut, login }
 
 export const selectLogin = (state: RootState) => state.login
 
